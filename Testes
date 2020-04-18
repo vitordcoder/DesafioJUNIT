@@ -1,2 +1,17 @@
-Foi realizado o primeiro teste.
-foi conferido um erro devido a classe estar sem o ENUM.
+ - Foi realizado o primeiro teste com o seguinte codigo
+public int calculaPena(Resposta respostaPrisioneiroA, Resposta respostaPrisioneiroB) {
+      if (respostaPrisioneiroA == Resposta.DELACAO) {
+          if (respostaPrisioneiroB == Resposta.DELACAO) {
+            return PENA_CONDENACAO_MUTUA;
+          } else {
+                 return PENA_INOCENCIA;
+                 }
+       } else {
+                if (respostaPrisioneiroB == Resposta.DELACAO) {
+                    return PENA_CONDENACAO_INDIVIDUAL;
+                } else {
+                         return PENA_CONDENACAO_CUMPLICES;
+                        }
+                }
+     }
+ - Foi conferido um erro devido a classe java estar sem o ENUM.
