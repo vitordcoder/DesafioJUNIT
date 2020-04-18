@@ -229,7 +229,56 @@ Como foi corrigido -> A variável de valor incorreto 'PENA_CONDENACAO_CUMPLICES =
 
  
 
+ - Sexto teste
+
  
+
+Interpretação: Um erro de valores foi gerado no método testCauculaPenaInocente, o valor esperado era 0 porem o retornado foi 10 devido a variável retornada ser a variável incorreta para este case.
+
+ 
+
+Stacktrace: org.opentest4j.AssertionFailedError: expected: <0> but was: <10>
+    at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+
+ 
+
+Como foi corrigido -> A variável de valor incorreto de retorno 'PENA_INOCENCIA' foi remanejada (trocada com PENA_CONDENACAO_INDIVIDUAL) para o devido bloco de if seguindo o algoritmo primário fornecido.
+
+ 
+
+Código: public class JulgamentoPrisioneiro {
+
+ 
+
+    private int PENA_INOCENCIA = 10;
+    private int PENA_CONDENACAO_MUTUA = 5;
+    private int PENA_CONDENACAO_INDIVIDUAL = 10;
+    private int PENA_CONDENACAO_CUMPLICES = 1;
+
+ 
+
+    public int calculaPena(String respostaPrisioneiroA, String respostaPrisioneiroB) {
+        if (respostaPrisioneiroA == "Culpado") {
+            if (respostaPrisioneiroB == "Culpado") {
+                return PENA_CONDENACAO_MUTUA;
+            } else {
+                return PENA_CONDENACAO_INDIVIDUAL;
+            }
+        } else {
+            if (respostaPrisioneiroB == "Culpado") {
+                return PENA_CONDENACAO_CUMPLICES;
+            } else {
+                return PENA_INOCENCIA;
+            }
+        }
+
+ 
+
+    }
+
+ 
+
+}
 
  
 
