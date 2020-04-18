@@ -182,6 +182,20 @@ Código -> public class JulgamentoPrisioneiro {
 
 }
 
+- terceiro teste
+
+Interpretação: Um erro de valores foi gerado no método cauculaPenaCondenacaoMutua, o valor esperado era 5 porem o retornado
+foi 15 devido a variável com valor incorreto na classe JulgamentoPrisioneiro.
+
+ 
+
+Stacktrace -> org.opentest4j.AssertionFailedError: expected: <5> but was: <15>
+    at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+
+ 
+
+Como foi corrigido: A variável de valor incorreto 'PENA_CONDENACAO_MUTUA = 15' foi redefinida para 'PENA_CONDENACAO_MUTUA = 5'
+
  
 
 
