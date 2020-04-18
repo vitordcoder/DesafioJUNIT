@@ -194,7 +194,7 @@ Stacktrace -> org.opentest4j.AssertionFailedError: expected: <5> but was: <15>
 
  
 
-Como foi corrigido: A variável de valor incorreto 'PENA_CONDENACAO_MUTUA = 15' foi redefinida para 'PENA_CONDENACAO_MUTUA = 5'
+Como foi corrigido -> A variável de valor incorreto 'PENA_CONDENACAO_MUTUA = 15' foi redefinida para 'PENA_CONDENACAO_MUTUA = 5'
 
 
 
@@ -211,6 +211,25 @@ Stacktrace -> org.opentest4j.AssertionFailedError: expected: <1> but was: <10>
  
 
 Como foi corrigido: A variável de valor incorreto 'PENA_CONDENACAO_INDIVIDUAL = 10' foi redefinida para 'PENA_CONDENACAO_INDIVIDUAL = 1'
+
+
+ - Quinto teste
+ 
+
+Interpretação: Um erro de valores foi gerado no método cauculaPenaCondenacaoCumplices, o valor esperado era 1 porem o retornado foi 11 devido a variável com valor incorreto na classe JulgamentoPrisioneiro.
+
+ 
+
+Stacktrace: org.opentest4j.AssertionFailedError: expected: <1> but was: <11>
+    at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+
+ 
+
+Como foi corrigido -> A variável de valor incorreto 'PENA_CONDENACAO_CUMPLICES = 11' foi redefinida para 'PENA_CONDENACAO_CUMPLICES = 1'
+
+ 
+
+ 
 
  
 
